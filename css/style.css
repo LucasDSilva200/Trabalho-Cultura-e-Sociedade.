@@ -1,160 +1,141 @@
 /*Estilo Global*/
 * {
-    margin: 0;
-    padding: 0;
-    font-family: system-ui, -apple-system,
-    BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue',
-    sans-serif;
-
+  margin: 0;
+  padding: 0;
 }
 
 /*Estilo da âncoras*/
 a {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 /*Estilo do hover da âncora*/
 a:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 /*Estilo da classe logo*/
 .logo {
-    font-size: 24px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+  font-size: 24px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
 /*Estilo da navbar*/
 nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-family: system-ui, -apple-system,
-        BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen, Ubuntu, Cantarell,
-        'Open Sans', 'Helvetica Neue',
-        sans-serif;
-    background: #23232e;
-    height: 8vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #23232e;
+  height: 8vh;
 }
 
 /*Estilo da main*/
 main {
-    /*background: url("/static/imgs/bg.jpg") no-repeat center center;*/
-    background-size: cover;
-    height: 92vh;
-    text-align: center;
+  /*background: url("../imgs/bg.jpg") no-repeat center center;*/
+  background-size: cover;
+  height: 92vh;
+  text-align: center;
 }
 
 /*Estilo da classe nave-list*/
 .nav-list {
-    list-style: none;
-    display: flex;
+  list-style: none;
+  display: flex;
 }
 
 /*Estilo da lista da classe nave-list*/
 .nav-list li {
-    letter-spacing: 3px;
-    margin-left: 32px;
+  letter-spacing: 3px;
+  margin-left: 32px;
 }
 
 /*Estilo da classe mobile-menu*/
 .mobile-menu {
-    cursor: pointer;
-    display: none;
+  cursor: pointer;
+  display: none;
 }
 
 /*Estilo da div da classe mobile-menu*/
 .mobile-menu div {
-    width: 32px;
-    height: 2px;
-    background: #fff;
-    margin: 8px;
-    transition: 0.3s;
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  background: #23232e;
+  color: #fff;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  /*line-height: 100px;*/
 }
 
 /*@media calcula o tamanho da tela*/
 @media (max-width: 999px) {
-    body {
-        overflow-x: hidden;
-    }
+  body {
+    overflow-x: hidden;
+  }
 
-    .nav-list {
-        position: absolute;
-        top: 8vh;
-        right: 0;
-        width: 50vw;
-        height: 92vh;
-        background: #23232e;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in;
-    }
+  .nav-list {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 50vw;
+    height: 92vh;
+    background: #23232e;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    z-index: 1; /* Add this line */
+  }
 
-    .nav-list li {
-        margin-left: 0;
-        opacity: 0;
-    }
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
 
-    .mobile-menu {
-        display: block;
-    }
+  .mobile-menu {
+    display: block;
+  }
 }
 
 /*Funcionalidades de responsividade*/
 .nav-list.active {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
-
 @keyframes navLinkFade {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateX(1);
-
-    }
+  to {
+    opacity: 1;
+    transform: translateX(1);
+  }
 }
 
 .mobile-menu.active .line1 {
-    transform: rotate(-45deg) translate(-8px, 8px);
+  transform: rotate(-45deg) translate(-8px, 8px);
 }
 
 .mobile-menu.active .line2 {
-    opacity: 0;
+  opacity: 0;
 }
 
 .mobile-menu.active .line3 {
-    transform: rotate(45deg) translate(-5px, -7px);
-}
-
-.list-blogs {
-    background-color: #fff;
-    width: 70vh;
-    border-radius: 20px;
-    
-}
-
-.list-blogs .blog a{
-    color: #000;
-}
-.blog{
-    display: inline-block;
-}
-.titulo_blog{
-    text-align: left;
-}
-.rodape_blog{
-    text-align: right;
+  transform: rotate(45deg) translate(-5px, -7px);
 }
