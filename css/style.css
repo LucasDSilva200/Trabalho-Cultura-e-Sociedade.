@@ -21,6 +21,9 @@ a:hover {
   font-size: 24px;
   letter-spacing: 4px;
   text-transform: uppercase;
+  background: linear-gradient(270deg, #3f5efb, #fc466b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /*Estilo da navbar*/
@@ -153,3 +156,5 @@ footer {
     padding: 10px;
   }
 }
+
+.logo {}
