@@ -1,0 +1,222 @@
+:root {
+  --color-01: #f4eee0;
+  --color-02: #6d5d6e;
+  --color-03: #393646;
+  --color-04: #4f4557;
+  --text-color: #fff;
+}
+
+/*Estilo Global*/
+* {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/*Estilo da âncoras*/
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/*Estilo do hover da âncora*/
+a:hover {
+  opacity: 0.7;
+}
+
+/*Estilo da classe logo*/
+.logo {
+  font-size: 24px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: linear-gradient(270deg, #3f5efb, #fc466b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*Estilo da navbar*/
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #23232e;
+  height: 8vh;
+}
+
+/*Estilo da main*/
+main {
+  background-color: var(--color-02);
+  background-size: cover;
+  flex: 1;
+  text-align: center;
+  padding-bottom: 100px; /* Adicione isso para dar espaço ao footer */
+  min-height: calc(100vh - 100px); /* Subtrai a altura do footer */
+}
+.content {
+  background-color: var(--color-04);
+  color: var(--color-01);
+  padding: 20px;
+  border: solid 2px;
+  width: 94%;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+/*Estilo da classe nave-list*/
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+/*Estilo da lista da classe nave-list*/
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+
+/*Estilo da classe mobile-menu*/
+.mobile-menu {
+  cursor: pointer;
+  display: none;
+}
+
+/*Estilo da div da classe mobile-menu*/
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: var(--color-01);
+  margin: 8px;
+  transition: 0.3s;
+}
+
+footer {
+  bottom: 0;
+  background: var(--color-03);
+  color: var(--color-01);
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+
+/*@media calcula o tamanho da tela*/
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .content {
+    padding: 5px;
+    border: solid 2px;
+    width: 94%;
+    margin-top: 5px;
+    margin-left: 7px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 50vw;
+    height: 100%;
+    background: var(--color-03);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    z-index: 1;
+  }
+
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+@media (max-width: 500px) {
+  html {
+    overflow-x: hidden;
+  }
+
+  .content {
+    padding: 1%;
+    border: solid 1px;
+    width: 94%;
+    margin-top: 3px;
+    margin-left: 5px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+  }
+  .nav-list {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 50vw;
+    height: 100%;
+    background: var(--color-03);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    z-index: 1; /* Add this line */
+  }
+
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+/*Funcionalidades de responsividade*/
+.nav-list.active {
+  transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(1);
+  }
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+  background-color: red;
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+  background-color: red;
+}
