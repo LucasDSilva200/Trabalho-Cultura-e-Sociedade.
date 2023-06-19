@@ -1,3 +1,25 @@
+<?php
+
+  function get_client_ip() {
+    $ipaddress = '';
+    if (isset($_SERVER['HTTP_CLIENT_IP']))
+        $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+    else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED'];
+    else if(isset($_SERVER['REMOTE_ADDR']))
+        $ipaddress = $_SERVER['REMOTE_ADDR'];
+    else
+        $ipaddress = 'UNKNOWN';
+    return $ipaddress;
+  }
+  $ipaddress=get_client_ip();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -90,3 +112,22 @@
     <script src="assets/js/mobile-navbar.js"></script>
   </body>
 </html>
+<?php
+  $iplist = "iplist.txt";
+  $file = fopen($iplist,'a');
+  if($file){
+    $conteudo = "Internauta: '$ipaddress'\n"; // O conteúdo que você deseja escrever
+
+    // Escreva o conteúdo no arquivo
+    fwrite($file, $conteudo);
+
+    // Feche o arquivo
+    fclose($arquivo);
+    echo "O arquivo '$iplist' foi criado e o conteúdo foi escrito com sucesso.";
+
+  }
+  else {
+    echo "Não foi possível abrir o arquivo '$iplist'. Verifique as permissões.";
+  }
+
+?>
