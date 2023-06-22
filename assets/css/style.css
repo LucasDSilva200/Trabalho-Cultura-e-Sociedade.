@@ -111,6 +111,7 @@ footer {
 
 footer div {
   display: inline-block;
+  padding: 0;
 }
 .div-participantes {
   float: right;
